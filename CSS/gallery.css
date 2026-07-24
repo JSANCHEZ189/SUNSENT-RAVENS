@@ -1,0 +1,363 @@
+/*==============================
+    HEADER
+==============================*/
+
+.project-header{
+
+    width:100%;
+    padding:35px 8% 0;
+
+}
+
+.back-btn{
+
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    transition:.4s;
+
+}
+
+.back-btn:hover{
+
+    color:#00c8ff;
+
+}
+
+/*==============================
+    HERO
+==============================*/
+
+.project-hero{
+
+    width:100%;
+
+    padding:90px 8% 70px;
+
+}
+
+.project-number{
+
+    display:block;
+
+    color:#00c8ff;
+
+    letter-spacing:4px;
+
+    font-size:18px;
+
+    margin-bottom:35px;
+
+}
+
+.project-hero h1{
+
+    font-size:72px;
+
+    color:#fff;
+
+    margin-bottom:25px;
+
+}
+
+.project-hero p{
+
+    font-size:22px;
+
+    color:#8f98b2;
+
+}
+
+/*=========================================
+            GALERIA
+=========================================*/
+
+.gallery{
+
+    width:90%;
+
+    max-width:1500px;
+
+    margin:70px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+    
+
+}
+
+/*=========================================
+            TARJETAS
+=========================================*/
+
+.gallery img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    border:2px solid rgba(0,200,255,.15);
+
+    background:#0d1325;
+
+    cursor:pointer;
+
+    transition:.45s;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.45);
+
+}
+
+.gallery img:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#00c8ff;
+
+    box-shadow:
+
+    0 0 20px rgba(0,200,255,.35),
+
+    0 20px 40px rgba(0,0,0,.6);
+
+}
+
+/*=========================================
+        EFECTO DIFERENTE
+=========================================*/
+
+.gallery img:nth-child(2){
+
+    height:420px;
+
+}
+
+.gallery img:nth-child(5){
+
+    height:420px;
+
+}
+
+.gallery img:nth-child(7){
+
+    height:450px;
+
+}
+
+/*=========================================
+        RESPONSIVE
+=========================================*/
+
+@media(max-width:992px){
+
+.gallery{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.cover{
+
+height:45vh;
+
+}
+
+.gallery{
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+}
+
+.gallery img,
+.gallery img:nth-child(2),
+.gallery img:nth-child(5),
+.gallery img:nth-child(7){
+
+height:260px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.cover{
+
+height:35vh;
+
+}
+
+.gallery{
+
+width:95%;
+
+}
+
+}
+
+/*=========================================
+            LIGHTBOX
+=========================================*/
+
+.lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.95);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.4s;
+
+    z-index:9999;
+
+}
+
+.lightbox.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.lightbox img{
+
+    max-width:90%;
+
+    max-height:90%;
+
+    border-radius:15px;
+
+    box-shadow:
+
+    0 0 35px rgba(0,200,255,.35);
+
+    animation:zoom .35s ease;
+
+}
+
+@keyframes zoom{
+
+from{
+
+transform:scale(.6);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+.close-lightbox{
+
+    position:absolute;
+
+    top:25px;
+
+    right:35px;
+
+    color:white;
+
+    font-size:45px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.close-lightbox:hover{
+
+    color:#00c8ff;
+
+}
+
+.prev,
+.next{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    background:rgba(255,255,255,.1);
+
+    border:none;
+
+    color:white;
+
+    font-size:45px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.prev:hover,
+.next:hover{
+
+    background:#00c8ff;
+
+}
+
+.prev{
+
+    left:40px;
+
+}
+
+.next{
+
+    right:40px;
+
+}
