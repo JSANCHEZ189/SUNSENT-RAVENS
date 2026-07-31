@@ -361,3 +361,9 @@ opacity:1;
     right:40px;
 
 }
+
+.media video{
+    width:100%;
+    border-radius:15px;
+    display:block;
+}
